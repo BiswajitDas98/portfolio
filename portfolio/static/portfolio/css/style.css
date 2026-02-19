@@ -1,0 +1,79 @@
+:root {
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --accent: #3b82f6;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    padding: 100px 0;
+}
+
+h1, h2, h3 {
+    color: var(--accent);
+}
+
+#hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+}
+
+#hero h3 {
+    color: var(--accent);
+    min-height: 40px;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    border: none;
+}
+
+.btn-primary:hover {
+    opacity: 0.85;
+}
+
+/* Navbar Customizations */
+.navbar {
+    background-color: #0f172a !important;
+    padding: 1rem 2rem;
+    transition: 0.3s;
+}
+
+.navbar .nav-link {
+    color: var(--text-color) !important;
+    margin-left: 1rem;
+}
+
+.navbar .nav-link:hover {
+    color: var(--accent) !important;
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+    color: var(--accent) !important;
+}
+
+#skills {
+    background-color: #111827;
+    color: var(--text-color);
+}
+
+#skills h2 {
+    color: var(--accent);
+}
+
+.progress {
+    background-color: #1f2937;
+}
+
+.progress-bar {
+    font-weight: bold;
+    color: #fff;
+}

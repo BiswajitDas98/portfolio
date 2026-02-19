@@ -1,0 +1,26 @@
+{% if hero %}
+<section id="hero" class="vh-100 d-flex align-items-center text-center position-relative">
+
+    <div class="container" data-aos="fade-up">
+        <h1 class="display-3 fw-bold">
+            {{ hero.title }}
+        </h1>
+
+        <h3 class="mt-3">
+            <span id="typing"
+                data-roles='{{ hero.extra_data.typing_roles|safe }}'>
+            </span>
+        </h3>
+
+        <p class="lead mt-4">
+            {{ hero.description }}
+        </p>
+
+        <a href="{{ hero.extra_data.button_link }}"
+           class="btn btn-primary btn-lg mt-3">
+           {{ hero.extra_data.button_text }}
+        </a>
+    </div>
+
+</section>
+{% endif %}

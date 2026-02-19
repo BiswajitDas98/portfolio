@@ -1,0 +1,21 @@
+{% if about %}
+<section id="about" class="py-5">
+    <div class="container" data-aos="fade-up">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="{{ about.extra_data.image }}" class="img-fluid rounded shadow" alt="About Image">
+            </div>
+            <div class="col-md-6">
+                <h2>{{ about.title }}</h2>
+                <p>{{ about.description }}</p>
+                <p><strong>Skills:</strong> {{ about.extra_data.skills_summary }}</p>
+                {% if about.extra_data.resume_link %}
+                    <a href="{{ about.extra_data.resume_link }}" target="_blank" class="btn btn-primary mt-3">
+                        Download Resume
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
