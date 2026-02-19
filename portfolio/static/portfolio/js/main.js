@@ -72,4 +72,55 @@ document.addEventListener("DOMContentLoaded", function () {
         bar.animate(skillPercentage);
     });
 
+    // ===========================
+    // Safe Contact Form Handling
+    // ===========================
+    const contactForm = document.querySelector("#contact form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent page reload / crash
+
+            try {
+                // Get form fields safely
+                const nameInput = contactForm.querySelector("input[name='name']");
+                const emailInput = contactForm.querySelector("input[name='email']");
+                const messageInput = contactForm.querySelector("textarea[name='message']");
+
+                const name = nameInput ? nameInput.value.trim() : "";
+                const email = emailInput ? emailInput.value.trim() : "";
+                const message = messageInput ? messageInput.value.trim() : "";
+
+                // Validate fields
+                if (!name || !email || !message) {
+                    showContactAlert("Please fill out all fields before sending!", "error");
+                    return;
+                }
+
+                // Show success alert
+                showContactAlert("Thank you! Your message has been received. (Form not connected yet)", "success");
+
+                // Clear the form safely
+                if (nameInput) nameInput.value = "";
+                if (emailInput) emailInput.value = "";
+                if (messageInput) messageInput.value = "";
+
+            } catch (err) {
+                console.error("Contact form error:", err);
+                showContactAlert("An unexpected error occurred.", "error");
+            }
+        });
+    }
+
+    // Helper function to show alerts
+    function showContactAlert(msg, type = "success") {
+        const alertBox = document.createElement("div");
+        alertBox.className = type === "success" ? "alert-js" : "alert-js alert-error";
+        alertBox.textContent = msg;
+
+        if (contactForm) {
+            contactForm.appendChild(alertBox);
+            setTimeout(() => alertBox.remove(), 4000);
+        }
+    }
+
 });
