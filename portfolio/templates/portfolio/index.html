@@ -6,5 +6,9 @@
 {% include 'portfolio/sections/about.html' %}
 {% include 'portfolio/sections/skills.html' %}
 {% include 'portfolio/sections/projects.html' %}
+{% if testimonials %}
+    {% include 'portfolio/sections/testimonials.html' %}
+{% endif %}
+{% include 'portfolio/sections/contacts.html' %}
 
 {% endblock %}

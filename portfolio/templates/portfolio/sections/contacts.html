@@ -1,0 +1,41 @@
+<section id="contact" class="py-20 bg-gray-900 text-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center">{{ contact.title }}</h2>
+    {% if contact.description %}
+    <p class="text-center mb-10">{{ contact.description }}</p>
+    {% endif %}
+
+    <div class="grid md:grid-cols-2 gap-8 justify-center items-center">
+
+      <!-- Contact Info -->
+      <div class="space-y-4 text-center md:text-left">
+        {% if contact.extra_data.email %}
+        <p>Email: <a href="mailto:{{ contact.extra_data.email }}" class="text-blue-400 hover:underline">{{ contact.extra_data.email }}</a></p>
+        {% endif %}
+
+        {% if contact.extra_data.phone %}
+        <p>Phone: <a href="tel:{{ contact.extra_data.phone }}" class="text-blue-400 hover:underline">{{ contact.extra_data.phone }}</a></p>
+        {% endif %}
+
+        {% if contact.extra_data.linkedin %}
+        <p>LinkedIn: <a href="{{ contact.extra_data.linkedin }}" target="_blank" class="text-blue-400 hover:underline">{{ contact.extra_data.linkedin }}</a></p>
+        {% endif %}
+
+        {% if contact.extra_data.github %}
+        <p>GitHub: <a href="{{ contact.extra_data.github }}" target="_blank" class="text-blue-400 hover:underline">{{ contact.extra_data.github }}</a></p>
+        {% endif %}
+      </div>
+
+      <!-- Optional Contact Form -->
+      <div>
+        <form action="#" method="POST" class="bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
+          <input type="text" name="name" placeholder="Your Name" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="email" name="email" placeholder="Your Email" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <textarea type="text" name="message" placeholder="Your Message" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded font-semibold">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

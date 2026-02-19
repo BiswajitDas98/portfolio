@@ -9,7 +9,7 @@ def home(request):
         'about': items.filter(section='about').first(),
         'skills': items.filter(section='skill'),
         'projects': items.filter(section='project'),
-        'testimonials': items.filter(section='testimonial'),
+        # 'testimonials': items.filter(section='testimonial'),
         'contact': items.filter(section='contact').first(),
         'socials': items.filter(section='social'),
     }

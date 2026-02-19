@@ -2,11 +2,15 @@
     --bg-color: #0f172a;
     --text-color: #f8fafc;
     --accent: #3b82f6;
+    --card-bg: #1e293b;
+    --card-hover-shadow: rgba(59, 130, 246, 0.3);
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
 }
 
 section {
@@ -15,14 +19,19 @@ section {
 
 h1, h2, h3 {
     color: var(--accent);
+    margin-bottom: 1rem;
 }
 
 #hero {
     background: linear-gradient(135deg, #0f172a, #1e293b);
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
 }
 
 #hero h1 {
     font-size: 3.5rem;
+    font-weight: bold;
 }
 
 #hero h3 {
@@ -33,22 +42,31 @@ h1, h2, h3 {
 .btn-primary {
     background-color: var(--accent);
     border: none;
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
     opacity: 0.85;
+    transform: translateY(-2px);
 }
 
-/* Navbar Customizations */
+/* Navbar */
 .navbar {
-    background-color: #0f172a !important;
+    background-color: var(--bg-color) !important;
     padding: 1rem 2rem;
     transition: 0.3s;
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 .navbar .nav-link {
     color: var(--text-color) !important;
     margin-left: 1rem;
+    transition: color 0.3s;
 }
 
 .navbar .nav-link:hover {
@@ -60,6 +78,7 @@ h1, h2, h3 {
     color: var(--accent) !important;
 }
 
+/* Skills Section */
 #skills {
     background-color: #111827;
     color: var(--text-color);
@@ -69,21 +88,24 @@ h1, h2, h3 {
     color: var(--accent);
 }
 
-.progress {
-    background-color: #1f2937;
+.skill-circle {
+    margin: 0 auto;
 }
 
-.progress-bar {
-    font-weight: bold;
-    color: #fff;
+/* Project Cards */
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Example custom hover shadow for projects */
 .project-card:hover {
-    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 25px var(--card-hover-shadow);
 }
 
-/* Smooth fade in for skills or other sections */
+/* Fade-in Animations */
 .fade-in {
     opacity: 0;
     animation: fadeIn 1s forwards;
@@ -91,4 +113,55 @@ h1, h2, h3 {
 
 @keyframes fadeIn {
     to { opacity: 1; }
+}
+
+/* Contact Section */
+#contact {
+    background-color: #111827;
+    color: var(--text-color);
+}
+
+#contact form {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#contact form:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(59,130,246,0.4);
+}
+
+#contact input, #contact textarea {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    color: var(--text-color);
+    border-radius: 6px;
+    padding: 0.75rem;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+#contact input:focus, #contact textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(59,130,246,0.5);
+}
+
+/* Buttons */
+#contact button {
+    background-color: var(--accent);
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+#contact button:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59,130,246,0.5);
 }
