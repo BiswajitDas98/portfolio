@@ -1,19 +1,20 @@
 {% if skills %}
-<section id="skills" class="py-5 bg-dark">
+<section id="skills">
     <div class="container" data-aos="fade-up">
-        <h2 class="text-center mb-4">My Skills</h2>
-        <div class="row">
+
+        <h2 class="text-center mb-5 section-title">My Skills</h2>
+
+        <div class="skills-grid">
             {% for skill in skills %}
-            <div class="col-md-6 mb-3">
-                <h5>{{ skill.title }}</h5>
-                <div class="progress" style="height: 20px;">
-                    <div class="progress-bar bg-primary" role="progressbar" style="width: {{ skill.extra_data.percentage }}%;" aria-valuenow="{{ skill.extra_data.percentage }}" aria-valuemin="0" aria-valuemax="100">
-                        {{ skill.extra_data.percentage }}%
-                    </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="{{ skill.extra_data.icon }}"></i>
                 </div>
+                <h5>{{ skill.title }}</h5>
             </div>
             {% endfor %}
         </div>
+
     </div>
 </section>
 {% endif %}

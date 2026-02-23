@@ -1,54 +1,108 @@
 <section id="contact" class="contact-section">
   <div class="contact-container">
 
-    <h2>Get in Touch</h2>
-    <p class="subtitle">
-      Feel free to connect for BI projects, dashboard development,
-      or data analytics collaborations.
-    </p>
+    <!-- Dynamic Title -->
+    <h2 class="contact-title">{{ contact.title }}</h2>
+
+    <!-- Dynamic Availability -->
+    {% if contact.extra_data.availability %}
+      <p class="contact-subtitle">
+        {{ contact.extra_data.availability }}
+      </p>
+    {% endif %}
 
     <div class="contact-grid">
 
-      <!-- Contact Info -->
+      <!-- LEFT SIDE: Dynamic Info Cards -->
       <div class="contact-info">
-        <div class="info-item">
-          <span>📧</span>
-          <a href="mailto:das.biswajit.career@gmail.com">
-            das.biswajit.career@gmail.com
-          </a>
-        </div>
 
-        <div class="info-item">
-          <span>📞</span>
-          <a href="tel:+919938293127">
-            +91 9938293127
-          </a>
+        {% if contact.extra_data.email %}
+        <div class="info-card">
+          <i class="bi bi-envelope-fill"></i>
+          <div>
+            {% comment %} <span>Email</span> {% endcomment %}
+            <a href="mailto:{{ contact.extra_data.email }}">
+              {{ contact.extra_data.email }}
+            </a>
+          </div>
         </div>
+        {% endif %}
 
-        <div class="info-item">
-          <span>🔗</span>
-          <a href="https://www.linkedin.com/in/biswajit-das-81831121a" target="_blank">
-            LinkedIn Profile
-          </a>
+        {% if contact.extra_data.phone %}
+        <div class="info-card">
+          <i class="bi bi-telephone-fill"></i>
+          <div>
+            {% comment %} <span>Phone</span> {% endcomment %}
+            <a href="tel:{{ contact.extra_data.phone }}">
+              {{ contact.extra_data.phone }}
+            </a>
+          </div>
         </div>
+        {% endif %}
 
-        <div class="info-item">
-          <span>💻</span>
-          <a href="https://github.com/BiswajitDas98" target="_blank">
-            GitHub
-          </a>
+        {% if contact.extra_data.linkedin %}
+        <div class="info-card">
+          <i class="bi bi-linkedin"></i>
+          <div>
+            {% comment %} <span>LinkedIn</span> {% endcomment %}
+            <a href="{{ contact.extra_data.linkedin }}" target="_blank">
+              View Profile
+            </a>
+          </div>
         </div>
+        {% endif %}
+
+        {% if contact.extra_data.github %}
+        <div class="info-card">
+          <i class="bi bi-github"></i>
+          <div>
+            {% comment %} <span>GitHub</span> {% endcomment %}
+            <a href="{{ contact.extra_data.github }}" target="_blank">
+              View Repositories
+            </a>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if contact.extra_data.portfolio %}
+        <div class="info-card">
+          <i class="bi bi-globe"></i>
+          <div>
+            <span>Portfolio</span>
+            <a href="{{ contact.extra_data.portfolio }}" target="_blank">
+              Visit Website
+            </a>
+          </div>
+        </div>
+        {% endif %}
+
       </div>
 
-      <!-- Contact Form -->
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+      <!-- RIGHT SIDE: Contact Form -->
+      <form class="contact-form" method="POST">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <input type="text" name="name" required>
+          <label>Your Name</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="email" required>
+          <label>Your Email</label>
+        </div>
+
+        <div class="form-group">
+          <textarea name="message" rows="4" required></textarea>
+          <label>Your Message</label>
+        </div>
+
+        <button type="submit" class="send-btn">
+          Send Message <i class="bi bi-arrow-right"></i>
+        </button>
+
       </form>
 
     </div>
-
   </div>
 </section>

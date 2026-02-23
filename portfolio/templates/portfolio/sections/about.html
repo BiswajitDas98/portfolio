@@ -1,20 +1,42 @@
 {% if about %}
-<section id="about" class="py-5">
+<section id="about" class="about-section">
     <div class="container" data-aos="fade-up">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <img src="{{ about.extra_data.image }}" class="img-fluid rounded shadow" alt="About Image">
+
+        <div class="about-wrapper">
+
+            <!-- LEFT IMAGE -->
+            <div class="about-image">
+                <div class="image-glow"></div>
+                <img src="{{ about.extra_data.image }}" alt="{{ about.title }}">
             </div>
-            <div class="col-md-6">
+
+            <!-- RIGHT CONTENT -->
+            <div class="about-content">
+                {% comment %} <span class="about-tag">About Me</span> {% endcomment %}
+
                 <h2>{{ about.title }}</h2>
-                <p>{{ about.description }}</p>
-                <p><strong>Skills:</strong> {{ about.extra_data.skills_summary }}</p>
-                {% if about.extra_data.resume_link %}
-                    <a href="{{ about.extra_data.resume_link }}" target="_blank" class="btn btn-primary mt-3">
-                        Download Resume
-                    </a>
+
+                <p class="about-description">
+                    {{ about.description }}
+                </p>
+
+                {% if about.extra_data.skills_summary %}
+                <div class="skills-highlight">
+                    <strong>Core Expertise:</strong>
+                    {{ about.extra_data.skills_summary }}
+                </div>
                 {% endif %}
+
+                {% if about.extra_data.resume_link %}
+                <a href="{{ about.extra_data.resume_link }}" 
+                   target="_blank" 
+                   class="about-btn">
+                    Download Resume →
+                </a>
+                {% endif %}
+
             </div>
+
         </div>
     </div>
 </section>
