@@ -1,41 +1,54 @@
-<section id="contact" class="py-20 bg-gray-900 text-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-8 text-center">{{ contact.title }}</h2>
-    {% if contact.description %}
-    <p class="text-center mb-10">{{ contact.description }}</p>
-    {% endif %}
+<section id="contact" class="contact-section">
+  <div class="contact-container">
 
-    <div class="grid md:grid-cols-2 gap-8 justify-center items-center">
+    <h2>Get in Touch</h2>
+    <p class="subtitle">
+      Feel free to connect for BI projects, dashboard development,
+      or data analytics collaborations.
+    </p>
+
+    <div class="contact-grid">
 
       <!-- Contact Info -->
-      <div class="space-y-4 text-center md:text-left">
-        {% if contact.extra_data.email %}
-        <p>Email: <a href="mailto:{{ contact.extra_data.email }}" class="text-blue-400 hover:underline">{{ contact.extra_data.email }}</a></p>
-        {% endif %}
+      <div class="contact-info">
+        <div class="info-item">
+          <span>📧</span>
+          <a href="mailto:das.biswajit.career@gmail.com">
+            das.biswajit.career@gmail.com
+          </a>
+        </div>
 
-        {% if contact.extra_data.phone %}
-        <p>Phone: <a href="tel:{{ contact.extra_data.phone }}" class="text-blue-400 hover:underline">{{ contact.extra_data.phone }}</a></p>
-        {% endif %}
+        <div class="info-item">
+          <span>📞</span>
+          <a href="tel:+919938293127">
+            +91 9938293127
+          </a>
+        </div>
 
-        {% if contact.extra_data.linkedin %}
-        <p>LinkedIn: <a href="{{ contact.extra_data.linkedin }}" target="_blank" class="text-blue-400 hover:underline">{{ contact.extra_data.linkedin }}</a></p>
-        {% endif %}
+        <div class="info-item">
+          <span>🔗</span>
+          <a href="https://www.linkedin.com/in/biswajit-das-81831121a" target="_blank">
+            LinkedIn Profile
+          </a>
+        </div>
 
-        {% if contact.extra_data.github %}
-        <p>GitHub: <a href="{{ contact.extra_data.github }}" target="_blank" class="text-blue-400 hover:underline">{{ contact.extra_data.github }}</a></p>
-        {% endif %}
+        <div class="info-item">
+          <span>💻</span>
+          <a href="https://github.com/BiswajitDas98" target="_blank">
+            GitHub
+          </a>
+        </div>
       </div>
 
-      <!-- Optional Contact Form -->
-      <div>
-        <form action="#" method="POST" class="bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
-          <input type="text" name="name" placeholder="Your Name" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <input type="email" name="email" placeholder="Your Email" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <textarea type="text" name="message" placeholder="Your Message" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-          <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded font-semibold">Send Message</button>
-        </form>
-      </div>
+      <!-- Contact Form -->
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
 
     </div>
+
   </div>
 </section>
