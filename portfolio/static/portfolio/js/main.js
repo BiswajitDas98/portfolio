@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 // Show success alert
-                showContactAlert("Thank you! Your message has been received. (Form not connected yet)", "success");
+                showContactAlert("Thank you! Your message has been received.", "success");
 
                 // Clear the form safely
                 if (nameInput) nameInput.value = "";
