@@ -397,7 +397,7 @@
     "user": 1,
     "content_type": 7,
     "object_id": "18",
-    "object_repr": "contact - LetÆs Work Together",
+    "object_repr": "contact - Let us Work Together",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
   }
@@ -410,7 +410,7 @@
     "user": 1,
     "content_type": 7,
     "object_id": "18",
-    "object_repr": "contact - LetÆs Work Together",
+    "object_repr": "contact - Let us Work Together",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"Description\", \"Extra data\"]}}]"
   }
@@ -1383,7 +1383,7 @@
   "pk": 18,
   "fields": {
     "section": "contact",
-    "title": "LetÆs Work Together",
+    "title": "Let us Work Together",
     "description": "Open to Power BI & Data Analytics opportunities.",
     "image": "",
     "extra_data": {
